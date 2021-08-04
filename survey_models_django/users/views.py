@@ -34,7 +34,7 @@ def login_user(request):
         if user is not None:
             log.debug(f"Login user: {user.get_username()}")
             login(request, user)
-            return redirect('tests_list')
+            return redirect(request.GET.get('next', '/'))
     context = {}
     return render(request, 'users/login.html', context)
 

@@ -19,7 +19,7 @@ class TestAdmin(admin.ModelAdmin):
 
 class TestrunAdmin(admin.ModelAdmin):
     model = Testrun
-    list_display = ['id', 'test', 'points','finished_at']
+    list_display = ['id', 'test', 'points','finished_at', 'is_completed']
 
 
 admin.site.register(Option)

@@ -75,6 +75,8 @@ class TestSessionView(DetailView):
                                                         question=question))
                 if user_option == question.right_option:
                     points += 1
+            else:
+                instance.is_completed = False
         instance.points = points
         log.debug(f'Saving session: {instance.test}; {instance.user}; {instance.points}; {instance.finished_at}')
         instance.save()
