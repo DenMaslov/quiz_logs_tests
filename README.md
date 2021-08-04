@@ -9,7 +9,7 @@
 3. pipenv shell
 4. pipenv install
 5. cd survey_models_django
-6. py manage.py migrate **or** you can use already created db https://drive.google.com/file/d/1d5zw_qNwjjzqQ6aIVz2GfBWY8HeWBKhq/view?usp=sharing for testing functionality
+6. py manage.py migrate **or** you can use already created db https://drive.google.com/file/d/16bRSLeqOQH1JYJfqMdvnYhKHh0BVAI88/view?usp=sharing for testing functionality
 
 
 ### TESTED WITH:
