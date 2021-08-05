@@ -125,6 +125,10 @@ STATICFILES_FINDERS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+LOGGING_DIR = os.path.join(BASE_DIR, 'logs')
+if not os.path.exists(LOGGING_DIR):
+    os.mkdir(LOGGING_DIR)
+    
 LOGGING = {
 'version': 1,
 'disable_existing_loggers': True,
@@ -137,7 +141,7 @@ LOGGING = {
     'file': {
             'level': 'INFO',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR,  'logs/request_log.log'),
+            'filename': os.path.join(LOGGING_DIR,  'request_log.log'),
             'maxBytes': 1024*1024*5,
             'backupCount': 100,
             'formatter':'standard',
@@ -145,7 +149,7 @@ LOGGING = {
     'auth_file': {
             'level': 'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR,  'logs/auth_log.log'),
+            'filename': os.path.join(LOGGING_DIR,  'auth_log.log'),
             'maxBytes': 1024*1024*5,
             'backupCount': 100,
             'formatter':'standard',
@@ -153,7 +157,7 @@ LOGGING = {
     'app_handler': {
             'level': 'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR,  'logs/apps_log.log'),
+            'filename': os.path.join(LOGGING_DIR,  'apps_log.log'),
             'maxBytes': 1024*1024*5,
             'backupCount': 100,
             'formatter':'standard',
